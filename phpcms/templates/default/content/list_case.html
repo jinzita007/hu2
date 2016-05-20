@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <meta charset="utf-8" />
+  <title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}{/if}{$SEO['site_title']}</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <meta name="description" content="{$SEO['description']}" />
+   <meta name="keywords" content="{$SEO['keyword']}" />
+
+
+  <!-- Stylesheets -->
+  <link href="/skins/style/bootstrap.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/skins/style/font-awesome.css" />
+  <link href="/skins/style/prettyPhoto.css" rel="stylesheet" />
+  <!-- Parallax slider -->
+  <link rel="stylesheet" href="/skins/style/slider.css" />
+  <!-- Flexslider -->
+  <link rel="stylesheet" href="/skins/style/flexslider.css" />
+
+  <link href="/skins/style/style.css" rel="stylesheet" />
+
+  <!-- Colors - Orange, Purple, Light Blue (lblue), Red, Green and Blue -->
+  <link href="/skins/style/lblue.css" rel="stylesheet" />
+
+  <link href="/skins/style/bootstrap-responsive.css" rel="stylesheet" />
+  
+  <!-- HTML5 Support for IE -->
+  <!--[if lt IE 9]>
+  <script src="/skins/js/html5shim.js"></script>
+  <![endif]-->
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="/skins/img/favicon/favicon.png" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+
+<body>
+{template "content","header"}
+
+<div class="content">
+  <div class="container">
+
+  <h2>{$catname}</h2>
+  <p class="big grey">{$description}</p>
+  <hr />
+
+  <div class="row">
+    <div class="span12">
+                    <!-- 
+                    <p style="display:none;">
+                        
+                        <div class="button">
+                           <ul id="filters">
+                             <li><a href="#" data-filter="*">全部</a></li>
+                             <li><a href="#" data-filter=".one">网站开发</a></li>
+                             <li><a href="#" data-filter=".two">微信开发</a></li>
+                             <li><a href="#" data-filter=".three">APP开发</a></li>
+                             <li><a href="#" data-filter=".four">软件开发</a></li>
+                             <li><a href="#" data-filter=".five">设计制作</a></li>
+                           </ul>
+                        </div>
+                    </p>
+                       --> 
+                        
+                    <div id="portfolio">
+                        {pc:content action="lists" catid="$catid" num="16" order="id DESC" page="$page"}
+
+                        {loop $data $r}
+                        <div class="element three five">
+                            <!--<a href="{$r[url]}" class="prettyPhoto[pp_gal]">-->
+                            <a href="{$r[url]}">
+                                    <img src="{$r[thumb]}" alt="" />
+                                    <div class="pcap">
+                                        <h4>{$r[title]}</h4>
+                                        <p>{$r[description]}</p>
+                                    </div>
+                                </a>
+                        </div>
+
+                        {/loop}
+                        {/pc}
+                        <!-- Add the above used filter names inside div tag. You can add more than one filter names. For image lightbox you need to include "a" tag pointing to image link, along with the class "prettyPhoto[pp_gal]".-->
+                       
+                    </div>
+
+        <div class="paging">
+            {$pages}
+        </div> 
+
+    </div>
+  </div>
+
+  </div>
+</div>
+
+{template "content","footer"}
+
+<!-- JS -->
+<script src="/skins/js/jquery.js"></script>
+<script src="/skins/js/bootstrap.js"></script> 
+<script src="/skins/js/jquery.isotope.js"></script> <!-- Isotope for gallery -->
+<script src="/skins/js/jquery.prettyPhoto.js"></script> <!-- prettyPhoto for images -->
+<script src="/skins/js/jquery.cslider.js"></script> <!-- Parallax slider -->
+<script src="/skins/js/modernizr.custom.28468.js"></script>
+<script src="/skins/js/filter.js"></script> <!-- Filter for support page -->
+<script src="/skins/js/cycle.js"></script> <!-- Cycle slider -->
+<script src="/skins/js/jquery.flexslider-min.js"></script> <!-- Flex slider -->
+
+<script src="/skins/js/easing.js"></script> <!-- Easing -->
+<script src="/skins/js/custom.js"></script>
+</body>
+</html>

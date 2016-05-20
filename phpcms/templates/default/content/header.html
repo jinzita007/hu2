@@ -1,0 +1,151 @@
+﻿<!-- Header Starts -->
+<header>
+  <div class="container">
+    <div class="row">
+      <div class="span6 slogo">
+        <div class="logo">
+          <!--<h1><a href="/">锐程 <span class="color">科技</span></a></h1>
+          <div class="hmeta">移动互联网专家</div>-->
+          <a href="/"><img src="/images/logo.png" /></a>
+        </div>
+      </div>
+      <div class="span6 smenu">
+
+        <!-- Navigation bar starts -->
+          <div class="navbar">
+           <div class="navbar-inner">
+             <div class="container">
+               <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                 <span>导航</span>
+               </a>
+               <div class="nav-collapse collapse">
+                 <ul class="nav">
+                    <li><a href="/">首页</a></li>
+                   {pc:content action="category" catid="0" num="20" siteid="$siteid" order="listorder ASC"}
+
+                       {loop $data $k $v}
+
+                      
+
+                            {if $v[child]==0}
+
+                               <li><a href="{$v[url]}">{$v[catname]}</a></li>
+
+                            {else}
+
+                               <li class="dropdown">
+
+                                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">{$v[catname]}<b class="caret"></b></a>
+                                           <ul class="dropdown-menu">
+                                            {pc:content action="category" catid="$k" num="20" siteid="$siteid" order="listorder ASC"}
+
+                                      {loop $data $r}
+
+                                        <li><a href="{if $r[child]==0}{$r[url]}{else}#{$v[catid]}/{$r[catid]}{/if}">{$r[catname]}</a></li>
+
+                                      {/loop}
+
+                                   {/pc}
+                                           </ul>
+
+                               </li> 
+
+                            {/if}
+
+                  {/loop}
+
+                   {/pc}
+                 </ul>
+               </div>
+              </div>
+           </div>
+         </div>
+
+<!-- Navigation bar ends -->
+
+
+      </div>
+    </div>
+  </div>
+</header>
+
+ <script type="text/javascript" src="http://www.brtbeacon.com/home/js/jquery-1.8.3.min.js"></script>
+                 <script type="text/javascript">
+function banner(){  
+    var bn_id = 0;
+    var bn_id2= 1;
+    var speed33=5000;
+    var qhjg = 1;
+    var MyMar33;
+    $("#banner .d1").hide();
+    $("#banner .d1").eq(0).fadeIn("slow");
+    if($("#banner .d1").length>1)
+    {
+        $("#banner_id li").eq(0).addClass("nuw");
+        function Marquee33(){
+            bn_id2 = bn_id+1;
+            if(bn_id2>$("#banner .d1").length-1)
+            {
+                bn_id2 = 0;
+            }
+            $("#banner .d1").eq(bn_id).css("z-index","2");
+            $("#banner .d1").eq(bn_id2).css("z-index","1");
+            $("#banner .d1").eq(bn_id2).show();
+            $("#banner .d1").eq(bn_id).fadeOut("slow");
+            $("#banner_id li").removeClass("nuw");
+            $("#banner_id li").eq(bn_id2).addClass("nuw");
+            bn_id=bn_id2;
+        };
+    
+        MyMar33=setInterval(Marquee33,speed33);
+        
+        $("#banner_id li").click(function(){
+            var bn_id3 = $("#banner_id li").index(this);
+            if(bn_id3!=bn_id&&qhjg==1)
+            {
+                qhjg = 0;
+                $("#banner .d1").eq(bn_id).css("z-index","2");
+                $("#banner .d1").eq(bn_id3).css("z-index","1");
+                $("#banner .d1").eq(bn_id3).show();
+                $("#banner .d1").eq(bn_id).fadeOut("slow",function(){qhjg = 1;});
+                $("#banner_id li").removeClass("nuw");
+                $("#banner_id li").eq(bn_id3).addClass("nuw");
+                bn_id=bn_id3;
+            }
+        })
+        $("#banner_id").hover(
+            function(){
+                clearInterval(MyMar33);
+            }
+            ,
+            function(){
+                MyMar33=setInterval(Marquee33,speed33);
+            }
+        )   
+    }
+    else
+    {
+        $("#banner_id").hide();
+    }
+}
+</script>
+<!-- Slider starts -->
+    <div class="banner" id="banner" >
+    {pc:content  action="lists" catid="31" order="id DESC" num="10"}
+                        {loop $data $key $val}
+                        <a href="{$val['url']}" class="d1" target="_blank"> <img src="{$val['thumb']}"></a>
+                        {/loop}
+   
+    <div class="d2" id="banner_id">
+        <ul>
+            {loop $data $key $val}
+                        <li></li>
+             {/loop}
+        </ul>
+    </div>
+     {/pc}
+</div>
+<script type="text/javascript">banner()</script>
+
+    <!-- Slider Ends -->
+

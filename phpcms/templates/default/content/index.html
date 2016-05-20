@@ -1,0 +1,785 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}{/if}{$SEO['site_title']}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="{$SEO['description']}" />
+    <meta name="keywords" content="{$SEO['keyword']}" />
+
+    <!-- Stylesheets -->
+
+    <link href="/skins/style/bootstrap.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="/skins/style/font-awesome.css" />
+
+    <link href="/skins/style/prettyPhoto.css" rel="stylesheet" />
+
+    <!-- Parallax slider -->
+
+    <link rel="stylesheet" href="/skins/style/slider.css" />
+
+    <!-- Flexslider -->
+
+    <link rel="stylesheet" href="/skins/style/flexslider.css" />
+
+    <link href="/skins/style/style.css" rel="stylesheet" />
+
+    <!-- Colors - Orange, Purple, Light Blue (lblue), Red, Green and Blue -->
+
+    <link href="/skins/style/lblue.css" rel="stylesheet" />
+
+    <link href="/skins/style/bootstrap-responsive.css" rel="stylesheet" />
+
+    <!-- HTML5 Support for IE -->
+
+    <!--[if lt IE 9]>
+  <script src="/skins/js/html5shim.js"></script>
+  <![endif]-->
+
+    <!-- Favicon -->
+
+    <link rel="shortcut icon" href="/skins/img/favicon/favicon.png" />
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   
+
+</head>
+
+<body>
+
+    {template "content","header"}
+  
+    
+
+    <div class="content">
+
+        <div class="container">
+
+            <!--服务项目 start-->
+
+            <div class="row center">
+
+                <div class="span12">
+
+                    <div class="bor">
+
+                    </div>
+
+                    <h2>
+
+                        我们能为您解决什么问题？</h2>
+
+                    <p></p>
+
+                    <div class="bor">
+
+                    </div>
+
+                    <hr />
+
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <!--<script type="text/javascript">
+                    var turn = function (target, time, opts) {
+                        target.find('li .img_box').hover(function () {
+                            $(this).find('.img_1').stop().animate(opts[0], time, function () {
+                                $(this).hide().next().show();
+                                $(this).next().animate(opts[1], time);
+                            });
+                        }, function () {
+                            $(this).find('.img_2').animate(opts[0], time, function () {
+                                $(this).hide().prev().show();
+                                $(this).prev().animate(opts[1], time);
+                            });
+                        });
+                    }
+                    var verticalOpts = [{ 'width': 0 }, { 'width': '120px' }];
+                    turn($('.warp_a_ul'), 100, verticalOpts);
+                </script>-->
+
+                <style type="text/css">
+                    /*m_warp_a*/
+                    .m_warp_a {
+                        overflow: hidden;
+                        width: 100%;
+                    }
+
+                    .warp_a_ul {
+                        padding: 0px 0 20px 0;
+                        overflow: hidden;
+                    }
+
+                        .warp_a_ul li {
+                            float: left;
+                            width: 25%;
+                            text-align: center;
+                        }
+
+                            .warp_a_ul li .img_box {
+                                display: block;
+                                margin: 0 auto;
+                                position: relative;
+                                overflow: hidden;
+                            }
+
+                            .warp_a_ul li img {
+                                display: block;
+                                margin: 0 auto;
+                                cursor: pointer;
+                                height: 160px;
+                            }
+
+                                .warp_a_ul li img.img_2 {
+                                    width: 0;
+                                    height: 160px;
+                                }
+
+                                .warp_a_ul li img.img_3 {
+                                    display: none;
+                                    position: absolute;
+                                    left: 0;
+                                    top: 0;
+                                }
+
+                            .warp_a_ul li .p1 {
+                                font: normal 18px/24px "Microsoft YaHei";
+                                color: #333;
+                            }
+
+                            .warp_a_ul li .p2 {
+                                font: normal 12px/20px "Microsoft YaHei";
+                                color: #999;
+                                padding-top: 10px;
+                            }
+
+                    @media (max-width: 480px) {
+                        .warp_a_ul li {
+                            width: 100%;
+                            text-align: center;
+                            float: none;
+                        }
+                    }
+
+
+                    /*m_warp_b*/
+                </style>
+                <div class="m_warp_a clear">
+                    <div class="container">
+                        <ul class="warp_a_ul">
+                            <li>
+                                <a href="http://weipe2014.duapp.com" class="img_box" target="_blank">
+                                    <img src="images/services/app1.png" class="img_1" width="160" style="width: 160px; display: block; overflow: hidden; ">
+                                    <img src="images/services/app2.png" class="img_2" style="width: 160px; display: none; ">
+                                </a>
+                                <p class="p1">APP应用</p>
+                                <p class="p2">量身定制属于您的专属APP<br>涵盖即时通讯、资讯、理财、音视频<br>旅游、医疗等众多行业</p>
+                            </li>
+                            <li>
+                                <a href="http://www.ruichengkj.cn/html/service/wangzhanjianshe/" class="img_box" target="_blank" >
+                                    <img src="images/services/web1.png" class="img_1" style="width: 160px; display: block; ">
+                                    <img src="images/services/web2.png" class="img_2" style="width: 0px; display: none;">
+                                </a>
+                                <p class="p1">定制网站</p>
+                                <p class="p2">拥有丰富的建设经验<br>包括电子商务、金融理财、在线教育等产品<br>让您的网站完美地适应PC端和移动端</p>
+                            </li>
+                            <li>
+                                <a href="http://www.ruichengkj.cn/html/service/ruanjiankaifa/" class="img_box" target="_blank" >
+                                    <img src="images/services/soft1.png" class="img_1" style="width: 160px; display: block; overflow: hidden; ">
+                                    <img src="images/services/soft2.png" class="img_2" style="width: 0px; display: none;">
+                                </a>
+                                <p class="p1">软件开发</p>
+                                <p class="p2">OA办公自动化系统<br>企业CRM客户关系管理系统<br>企业进销存管理系统、金融保险等系统</p>
+                            </li>
+                            <li>
+                                <a href="http://www.ruichengkj.cn/html/service/weiyingyong/" class="img_box" target="_blank">
+                                    <img src="images/services/wei1.png" class="img_1" style="width: 160px; display: block; overflow: hidden;">
+                                    <img src="images/services/wei2.png" class="img_2" style="width: 0px; display: none;">
+                                </a>
+                                <p class="p1">微应用</p>
+                                <p class="p2">有自主开发的微PE系统<br>专注于微信公众号的二次开发<br>为您在移动互联网时代提供更全面的服务
+</p>
+                            </li>
+
+                        </ul>
+                        <script type="text/javascript">
+                            var turn = function (target, time, opts) {
+                                target.find('li .img_box').hover(function () {
+                                    $(this).find('.img_1').stop().animate(opts[0], time, function () {
+                                        $(this).hide().next().show();
+                                        $(this).next().animate(opts[1], time);
+                                    });
+                                }, function () {
+                                    $(this).find('.img_2').animate(opts[0], time, function () {
+                                        $(this).hide().prev().show();
+                                        $(this).prev().animate(opts[1], time);
+                                    });
+                                });
+                            }
+                            var verticalOpts = [{ 'width': 0 }, { 'width': '160px' }];
+                            turn($('.warp_a_ul'), 100, verticalOpts);
+                        </script>
+                    </div>
+                </div>
+            </div>
+
+            <!--案例展示 start-->
+            <div class="row center">
+
+                <div class="span12">
+
+                    <div class="bor">
+
+                    </div>
+
+                    <h2>
+
+                        我们为哪些客户完美的解决掉了问题？</h2>
+
+                    <p></p>
+
+                    <div class="bor">
+
+                    </div>
+
+                    <hr />
+
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="span12">
+
+                    <div class="bor">
+
+                    </div>
+
+                    <!-- Image blocks starts -->
+
+                    <ul class="hover-block">
+
+                        {pc:content  action="lists" catid="8" order="id DESC" num="4"}
+                        {loop $data $key $val}
+                        <li>
+                            <a href="{$val['url']}" target="_blank">
+
+                                <!-- Image -->
+
+                                <img src="{$val['thumb']}" alt="" />
+
+                                <!-- Content with background color Class -->
+
+                                <div class="hover-content b-gray">
+
+                                    <h6>
+                                        {$val['title']}
+                                    </h6>
+
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                                </div>
+
+                            </a>
+                        </li>
+                        {/loop}
+                        {/pc}
+                        
+
+                    </ul>
+
+                    <div class="clearfix">
+
+                    </div>
+
+                    <!-- Image blocks ends -->
+
+                </div>
+
+            </div>
+            <!--案例展示 end-->
+
+            <div class="row" style="display:none;">
+
+                <div class="span12">
+
+                    <div class="bor">
+
+                    </div>
+
+                    <!-- Image blocks starts -->
+
+                    <ul class="hover-block">
+
+                        <li><a href="#">
+
+                            <!-- Image -->
+
+                            <img src="/skins/img/icons/service_softs.png" alt="" />
+
+                            <!-- Content with background color Class -->
+
+                            <div class="hover-content b-orange">
+
+                                <h6>
+
+                                    软件开发</h6>
+
+                                信息时代需要什么？量身定做的管理软件最适合不过了，我们可以为您量身订做！
+
+                            </div>
+
+                        </a></li>
+
+                        <li><a href="#">
+
+                            <img src="/skins/img/icons/service_wyy.png" alt="" />
+
+                            <div class="hover-content b-red">
+
+                                <h6>
+
+                                    手机网站</h6>
+
+                                无缝对接热门公众平台的手机网站,更有销售力的手机网站,同微信进行对接。
+
+                            </div>
+
+                        </a></li>
+
+                        <li><a href="#">
+
+                            <img src="/skins/img/icons/service_web.png" alt="" />
+
+                            <div class="hover-content b-purple">
+
+                                <h6>
+
+                                    响应式网站</h6>
+
+                                让您的网站不再挑剔浏览器终端,无论是电脑，还是pad，还是手机。
+
+                            </div>
+
+                        </a></li>
+
+                        <li><a href="#">
+
+                            <img src="/skins/img/icons/service_app.png" alt="" />
+
+                            <div class="hover-content b-lblue">
+
+                                <h6>
+
+                                    APP</h6>
+
+                                利用网站、微博、微信、移动客户端特点,提高品牌宣传的渗透度。
+
+                            </div>
+
+                        </a></li>
+
+                    </ul>
+
+                    <div class="clearfix">
+
+                    </div>
+
+                    <!-- Image blocks ends -->
+
+                </div>
+
+            </div>
+
+            <div class="bor">
+
+            </div>
+
+
+
+            <!--服务流程 start-->
+            <div class="row center">
+
+                <div class="span12">
+
+                    <div class="bor">
+
+                    </div>
+
+                    <h2>
+
+                        我们的服务流程？
+                    </h2>
+
+                    <p></p>
+
+                    <div class="bor">
+
+                    </div>
+
+                    <hr />
+
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="span12">
+
+                    <div class="bor">
+
+                    </div>
+
+                    <!-- Image blocks starts -->
+
+                    <img src="/images/serviceflow.png" />
+
+                    <div class="clearfix">
+
+                    </div>
+
+                    <!-- Image blocks ends -->
+
+                </div>
+
+            </div>
+            <!--服务流程 end-->
+            
+            <!--我们的优势 start-->
+            <div class="row center" style="display:none;">
+
+                <div class="span12">
+
+                    <div class="bor">
+
+                    </div>
+
+                    <h2>
+
+                        帮助您解决问题我们有哪些优势？</h2>
+
+                    <p></p>
+
+                    <div class="bor">
+
+                    </div>
+
+                    <hr />
+
+                </div>
+
+            </div>
+
+            <div class="row" style="display:none;">
+
+                <div class="span12">
+
+                    <div class="bor">
+
+                    </div>
+
+                    <!-- Image blocks starts -->
+
+                    <ul class="hover-block">
+
+                        <li><a href="#">
+
+                            <!-- Image -->
+
+                            <img src="/skins/img/photos/tn_1.jpg" alt="" />
+
+                            <!-- Content with background color Class -->
+
+                            <div class="hover-content b-orange">
+
+                                <h6>
+
+                                    独立的创意设计的团队</h6>
+
+                                拥有独立创意团队的服务品牌，专注于互联网视觉设计、交互设计，创造极致化的用户体验。
+
+                            </div>
+
+                        </a></li>
+
+                        <li><a href="#">
+
+                            <img src="/skins/img/photos/tn_2.jpg" alt="" />
+
+                            <div class="hover-content b-red">
+
+                                <h6>
+
+                                    完善的项目管控体系</h6>
+
+                                项目进程透明化、流程高效化，以规范化的服务保障产品质量，为用户节约大量时间。
+
+                            </div>
+
+                        </a></li>
+
+                        <li><a href="#">
+
+                            <img src="/skins/img/photos/tn_3.jpg" alt="" />
+
+                            <div class="hover-content b-purple">
+
+                                <h6>
+
+                                    一流的售后服务</h6>
+
+                                免费技术支持、免费技术培训、免费更新升级、免费备份一流的售后服务，解决您的后顾之忧。
+
+                            </div>
+
+                        </a></li>
+
+                        <li><a href="#">
+
+                            <img src="/skins/img/photos/tn_4.jpg" alt="" />
+
+                            <div class="hover-content b-lblue">
+
+                                <h6>
+
+                                    多元化一站式服务</h6>
+
+                                无论是网站、信息化系统、网上商店、IT运营平台产品、平面媒体、影视音乐多媒体广告制作、SEO搜索引擎优化及网络推广，您都可以放心交给我们。
+
+                            </div>
+
+                        </a></li>
+
+                    </ul>
+
+                    <div class="clearfix">
+
+                    </div>
+
+                    <!-- Image blocks ends -->
+
+                </div>
+
+            </div>
+            <!--我们的优势 end-->
+            
+            
+            
+
+
+
+            <!-- Color blocks starts -->
+
+            <div class="color-blocks"  style=" display:none;">
+
+                <div class="row">
+
+                    <div class="span4">
+
+                        <div class="c-block">
+
+                            <!-- Left column with color background -->
+
+                            <div class="col-l b-red">
+
+                                <!-- Link -->
+
+                                <a href="contactus.html">
+
+                                    <!-- Icon -->
+
+                                    <i class="icon-envelope-alt"></i>
+
+                                    <!-- Text -->
+
+                                    Contact </a>
+
+                            </div>
+
+                            <div class="col-r b-purple">
+
+                                <a href="aboutus.html"><i class="icon-user"></i>About </a>
+
+                            </div>
+
+                        </div>
+
+                        <div class="clearfix">
+
+                        </div>
+
+                    </div>
+
+                    <div class="span4">
+
+                        <div class="c-block">
+
+                            <!-- Left column with color background -->
+
+                            <div class="col-l b-green">
+
+                                <!-- Link -->
+
+                                <a href="blog.html">
+
+                                    <!-- Icon -->
+
+                                    <i class="icon-comments"></i>
+
+                                    <!-- Text -->
+
+                                    Blog </a>
+
+                            </div>
+
+                            <div class="col-r b-blue">
+
+                                <a href="#"><i class="icon-facebook"></i>Facebook </a>
+
+                            </div>
+
+                        </div>
+
+                        <div class="clearfix">
+
+                        </div>
+
+                    </div>
+
+                    <div class="span4">
+
+                        <div class="c-block">
+
+                            <!-- Left column with color background -->
+
+                            <div class="col-l b-lblue">
+
+                                <!-- Link -->
+
+                                <a href="#">
+
+                                    <!-- Icon -->
+
+                                    <i class="icon-twitter"></i>
+
+                                    <!-- Text -->
+
+                                    Twitter </a>
+
+                            </div>
+
+                            <div class="col-r b-orange">
+
+                                <a href="#"><i class="icon-google-plus"></i>Google Plus </a>
+
+                            </div>
+
+                        </div>
+
+                        <div class="clearfix">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Color blocks ends -->
+
+        </div>
+
+    </div>
+
+    {template "content","footer"}
+
+    <!-- JS -->
+
+
+
+    <script src="/skins/js/jquery.js"></script>
+
+
+
+    <script src="/skins/js/bootstrap.js"></script>
+
+
+
+    <script src="/skins/js/jquery.isotope.js"></script>
+
+
+
+    <!-- Isotope for gallery -->
+
+
+
+    <script src="/skins/js/jquery.prettyPhoto.js"></script>
+
+
+
+    <!-- prettyPhoto for images -->
+
+
+
+    <script src="/skins/js/jquery.cslider.js"></script>
+
+
+
+    <!-- Parallax slider -->
+
+
+
+    <script src="/skins/js/modernizr.custom.28468.js"></script>
+
+
+
+    <script src="/skins/js/filter.js"></script>
+
+
+
+    <!-- Filter for support page -->
+
+
+
+    <script src="/skins/js/cycle.js"></script>
+
+
+
+    <!-- Cycle slider -->
+
+
+
+    <script src="/skins/js/jquery.flexslider-min.js"></script>
+
+
+
+    <!-- Flex slider -->
+
+
+
+    <script src="/skins/js/easing.js"></script>
+
+
+
+    <!-- Easing -->
+
+
+
+    <script src="/skins/js/custom.js"></script>
+
+
+
+</body>
+
+</html>
+

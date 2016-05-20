@@ -1,0 +1,54 @@
+﻿<div class="span4">
+
+    <!-- Sidebar 1 -->
+
+    <div class="sidebar">
+
+        <!-- Widget -->
+
+        <div class="widget">
+
+            <h4>
+
+                最近更新</h4>
+
+            <ul>
+
+                {pc:content action="position" posid="2" num="10" order="listorder DESC"} {loop $data
+
+                $r}
+
+                <li><a href="{$r[url]}">{$r[title]}</a></li>
+
+                {/loop} {/pc}
+
+            </ul>
+
+        </div>
+
+        <div class="widget">
+
+            <h4>
+
+                联系我们</h4>
+
+            <p>
+
+                北京锐程科技有限公司<br />
+
+                联系人：吕经理<br />
+
+                手  机：18622979577<br />
+
+                地  址：北京市海淀区西三旗程远大厦5层<br />
+
+                网  址：<a href="http://www.ruichengkj.cn">http://www.ruichengkj.cn</a><br />
+
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+

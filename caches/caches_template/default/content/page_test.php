@@ -1,0 +1,236 @@
+<?php defined('IN_PHPCMS') or exit('No permission resources.'); ?>﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <meta charset="utf-8" />
+  <title><?php if(isset($SEO['title']) && !empty($SEO['title'])) { ?><?php echo $SEO['title'];?><?php } ?><?php echo $SEO['site_title'];?></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="<?php echo $SEO['description'];?>" />
+  <meta name="keywords" content="<?php echo $SEO['keyword'];?>" />
+  <meta name="author" content="" />
+
+
+  <!-- Stylesheets -->
+  <link href="/skins/style/bootstrap.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/skins/style/font-awesome.css" />
+  <link href="/skins/style/prettyPhoto.css" rel="stylesheet" />
+  <!-- Parallax slider -->
+  <link rel="stylesheet" href="/skins/style/slider.css" />
+  <!-- Flexslider -->
+  <link rel="stylesheet" href="/skins/style/flexslider.css" />
+
+  <link href="/skins/style/style.css" rel="stylesheet" />
+
+  <!-- Colors - Orange, Purple, Light Blue (lblue), Red, Green and Blue -->
+  <link href="/skins/style/lblue.css" rel="stylesheet" />
+
+  <link href="/skins/style/bootstrap-responsive.css" rel="stylesheet" />
+  
+  <!-- HTML5 Support for IE -->
+  <!--[if lt IE 9]>
+  <script src="/skins/js/html5shim.js"></script>
+  <![endif]-->
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="/skins/img/favicon/favicon.png" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!--引用百度地图API-->
+<style type="text/css">
+    html,body{margin:0;padding:0;}
+    .iw_poi_title {color:#CC5522;font-size:14px;font-weight:bold;overflow:hidden;padding-right:13px;white-space:nowrap}
+    .iw_poi_content {font:12px arial,sans-serif;overflow:visible;padding-top:4px;white-space:-moz-pre-wrap;word-wrap:break-word}
+</style>
+<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+</head>
+
+<body>
+
+<?php include template("content","header"); ?>
+
+<div class="content">
+  <div class="container">
+
+  <h2><?php echo $title;?></h2>
+  <!--<p class="big grey">Something Goes Here.</p>-->
+  <hr />
+  <!-- Blog starts -->
+            
+            <div class="blog">
+               <div class="row">
+                  <div class="span12">
+                     
+                     <!-- Blog Posts -->
+                     <div class="row">
+                        <div class="span8">
+                           <div class="posts">
+                           
+                              <!-- Each posts should be enclosed inside "entry" class" -->
+                              <!-- Post one -->
+                              <div class="entry">
+                                 <h2><?php echo $description;?></h2>
+                                 
+                                 <!-- Meta details -->
+                                 <!--<div class="meta">
+                                    <i class="icon-calendar"></i> 26-2-2012 <i class="icon-user"></i> Admin <i class="icon-folder-open"></i> <a href="#">General</a> <span class="pull-right"><i class="icon-comment"></i> <a href="#">2 Comments</a></span>
+                                 </div>-->
+                                 
+                                 <!-- Thumbnail -->
+                                 <!--<div class="bthumb2">
+                                    <a href="#"><img src="/skins/img/photos/tn_1.jpg" alt="" /></a>
+                                 </div>-->
+                                 <!--百度地图容器-->
+  <div style="width:600px;height:450px;border:#ccc solid 1px;" id="dituContent"></div>
+</body>
+<script type="text/javascript">
+    //创建和初始化地图函数：
+    function initMap(){
+        createMap();//创建地图
+        setMapEvent();//设置地图事件
+        addMapControl();//向地图添加控件
+        addMarker();//向地图中添加marker
+    }
+    
+    //创建地图函数：
+    function createMap(){
+        var map = new BMap.Map("dituContent");//在百度地图容器中创建一个地图
+        var point = new BMap.Point(116.369814,40.066321);//定义一个中心点坐标
+        map.centerAndZoom(point,17);//设定地图的中心点和坐标并将地图显示在地图容器中
+        window.map = map;//将map变量存储在全局
+    }
+    
+    //地图事件设置函数：
+    function setMapEvent(){
+        map.enableDragging();//启用地图拖拽事件，默认启用(可不写)
+        map.enableScrollWheelZoom();//启用地图滚轮放大缩小
+        map.enableDoubleClickZoom();//启用鼠标双击放大，默认启用(可不写)
+        map.enableKeyboard();//启用键盘上下左右键移动地图
+    }
+    
+    //地图控件添加函数：
+    function addMapControl(){
+        //向地图中添加缩放控件
+  var ctrl_nav = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+  map.addControl(ctrl_nav);
+        //向地图中添加缩略图控件
+  var ctrl_ove = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:1});
+  map.addControl(ctrl_ove);
+        //向地图中添加比例尺控件
+  var ctrl_sca = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+  map.addControl(ctrl_sca);
+    }
+    
+    //标注点数组
+    var markerArr = [{title:"北京锐程科技有限公司",content:"联系人：吕经理<br/>手&nbsp;&nbsp;机：18622979577",point:"116.36976|40.066445",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+     ];
+    //创建marker
+    function addMarker(){
+        for(var i=0;i<markerArr.length;i++){
+            var json = markerArr[i];
+            var p0 = json.point.split("|")[0];
+            var p1 = json.point.split("|")[1];
+            var point = new BMap.Point(p0,p1);
+      var iconImg = createIcon(json.icon);
+            var marker = new BMap.Marker(point,{icon:iconImg});
+      var iw = createInfoWindow(i);
+      var label = new BMap.Label(json.title,{"offset":new BMap.Size(json.icon.lb-json.icon.x+10,-20)});
+      marker.setLabel(label);
+            map.addOverlay(marker);
+            label.setStyle({
+                        borderColor:"#808080",
+                        color:"#333",
+                        cursor:"pointer"
+            });
+      
+      (function(){
+        var index = i;
+        var _iw = createInfoWindow(i);
+        var _marker = marker;
+        _marker.addEventListener("click",function(){
+            this.openInfoWindow(_iw);
+          });
+          _iw.addEventListener("open",function(){
+            _marker.getLabel().hide();
+          })
+          _iw.addEventListener("close",function(){
+            _marker.getLabel().show();
+          })
+        label.addEventListener("click",function(){
+            _marker.openInfoWindow(_iw);
+          })
+        if(!!json.isOpen){
+          label.hide();
+          _marker.openInfoWindow(_iw);
+        }
+      })()
+        }
+    }
+    //创建InfoWindow
+    function createInfoWindow(i){
+        var json = markerArr[i];
+        var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title + "</b><div class='iw_poi_content'>"+json.content+"</div>");
+        return iw;
+    }
+    //创建一个Icon
+    function createIcon(json){
+        var icon = new BMap.Icon("http://app.baidu.com/map/images/us_mk_icon.png", new BMap.Size(json.w,json.h),{imageOffset: new BMap.Size(-json.l,-json.t),infoWindowOffset:new BMap.Size(json.lb+5,1),offset:new BMap.Size(json.x,json.h)})
+        return icon;
+    }
+    
+    initMap();//创建和初始化地图
+</script>
+
+                                 <p>
+                                   <?php echo $content;?>
+                                 </p>
+                                 
+                                 </div>
+                              
+                              <div class="post-foot well">
+                                 <!-- Social media icons -->
+                                 <div class="social">
+                                    <h6>分享: </h6>
+                                    <!--a href="#"><i class="icon-facebook facebook"></i></a>
+                                    <a href="#"><i class="icon-twitter twitter"></i></a>
+                                    <a href="#"><i class="icon-linkedin linkedin"></i></a>
+                                    <a href="#"><i class="icon-pinterest pinterest"></i></a>
+                                    <a href="#"><i class="icon-google-plus google-plus"></i></a>-->
+                                    <div class="bshare-custom icon-medium"><a title="分享到QQ空间" class="bshare-qzone"></a><a title="分享到新浪微博" class="bshare-sinaminiblog"></a><a title="分享到人人网" class="bshare-renren"></a><a title="分享到腾讯微博" class="bshare-qqmb"></a><a title="分享到网易微博" class="bshare-neteasemb"></a><a title="更多平台" class="bshare-more bshare-more-icon more-style-addthis"></a></div><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=2&amp;lang=zh"></script><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
+                                 </div>
+                              </div>     
+
+                               <hr />
+
+                               
+                              
+                              <!-- Navigation -->
+                              
+                              <div class="navigation button" style="display:none;">  
+                                    <div class="pull-left"><a href="#">&laquo; Previous Post</a></div>
+                                    <div class="pull-right"><a href="#">Next Post &raquo;</a></div>
+                                    <div class="clearfix"></div>
+                              </div>
+
+                              <div class="clearfix"></div>
+                              
+                           </div>
+                        </div>                        
+                        <?php include template("content","common_right"); ?>
+                     </div>
+                     
+                     
+                     
+                  </div>
+               </div>
+            </div>
+
+  </div>
+</div>
+
+<?php include template("content","footer"); ?>
+
+<!-- JS -->
+<script src="/skins/js/jquery.js"></script>
+<script src="/skins/js/bootstrap.js"></script> 
+
+</body>
+</html>

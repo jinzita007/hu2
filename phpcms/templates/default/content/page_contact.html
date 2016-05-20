@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <meta charset="utf-8" />
+  <title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}{/if}{$SEO['site_title']}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="{$SEO['description']}" />
+  <meta name="keywords" content="{$SEO['keyword']}" />
+  <meta name="author" content="" />
+
+
+  <!-- Stylesheets -->
+  <link href="/skins/style/bootstrap.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/skins/style/font-awesome.css" />
+  <link href="/skins/style/prettyPhoto.css" rel="stylesheet" />
+  <!-- Parallax slider -->
+  <link rel="stylesheet" href="/skins/style/slider.css" />
+  <!-- Flexslider -->
+  <link rel="stylesheet" href="/skins/style/flexslider.css" />
+
+  <link href="/skins/style/style.css" rel="stylesheet" />
+
+  <!-- Colors - Orange, Purple, Light Blue (lblue), Red, Green and Blue -->
+  <link href="/skins/style/lblue.css" rel="stylesheet" />
+
+  <link href="/skins/style/bootstrap-responsive.css" rel="stylesheet" />
+  
+  <!-- HTML5 Support for IE -->
+  <!--[if lt IE 9]>
+  <script src="/skins/js/html5shim.js"></script>
+  <![endif]-->
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="/skins/img/favicon/favicon.png" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+</head>
+
+<body>
+
+{template "content","header"}
+
+<div class="content">
+  <div class="container">
+
+  <h2>{$title}</h2>
+  <!--<p class="big grey">Something Goes Here.</p>-->
+  <hr />
+  <!-- Blog starts -->
+            
+            <div class="blog">
+               <div class="row">
+                  <div class="span12">
+                     
+                     <!-- Blog Posts -->
+                     <div class="row">
+                        
+                        <!-- Each posts should be enclosed inside "entry" class" -->
+                              <!-- Post one -->
+                              <div class="entry">
+                                <!-- <h2>{$description}</h2>-->
+                                 
+                                 <!-- Meta details -->
+                                 <!--<div class="meta">
+                                    <i class="icon-calendar"></i> 26-2-2012 <i class="icon-user"></i> Admin <i class="icon-folder-open"></i> <a href="#">General</a> <span class="pull-right"><i class="icon-comment"></i> <a href="#">2 Comments</a></span>
+                                 </div>-->
+                                 
+                                 <!-- Thumbnail -->
+                                 <!--<div class="bthumb2">
+                                    <a href="#"><img src="/skins/img/photos/tn_1.jpg" alt="" /></a>
+                                 </div>-->
+                                
+
+                                 <p>
+                                   {$content}
+                                 </p>
+                                 
+                                 </div>
+                              
+                              <div class="post-foot well">
+                                 <!-- Social media icons -->
+                                 <div class="social">
+                                    <h6>分享: </h6>
+                                    <!--a href="#"><i class="icon-facebook facebook"></i></a>
+                                    <a href="#"><i class="icon-twitter twitter"></i></a>
+                                    <a href="#"><i class="icon-linkedin linkedin"></i></a>
+                                    <a href="#"><i class="icon-pinterest pinterest"></i></a>
+                                    <a href="#"><i class="icon-google-plus google-plus"></i></a>-->
+                                    <div class="bshare-custom icon-medium"><a title="分享到QQ空间" class="bshare-qzone"></a><a title="分享到新浪微博" class="bshare-sinaminiblog"></a><a title="分享到人人网" class="bshare-renren"></a><a title="分享到腾讯微博" class="bshare-qqmb"></a><a title="分享到网易微博" class="bshare-neteasemb"></a><a title="更多平台" class="bshare-more bshare-more-icon more-style-addthis"></a></div><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=2&amp;lang=zh"></script><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
+                                 </div>
+                              </div>     
+
+                               <hr />
+
+                               
+                              
+                              <!-- Navigation -->
+                              
+                              <div class="navigation button" style="display:none;">  
+                                    <div class="pull-left"><a href="#">&laquo; Previous Post</a></div>
+                                    <div class="pull-right"><a href="#">Next Post &raquo;</a></div>
+                                    <div class="clearfix"></div>
+                              </div>
+
+                              <div class="clearfix"></div>
+
+                     </div>
+                     
+                     
+                     
+                  </div>
+               </div>
+            </div>
+
+  </div>
+</div>
+
+{template "content","footer"}
+
+<!-- JS -->
+<script src="/skins/js/jquery.js"></script>
+<script src="/skins/js/bootstrap.js"></script> 
+<script src="/skins/js/jquery.isotope.js"></script> <!-- Isotope for gallery -->
+<script src="/skins/js/jquery.prettyPhoto.js"></script> <!-- prettyPhoto for images -->
+<script src="/skins/js/jquery.cslider.js"></script> <!-- Parallax slider -->
+<script src="/skins/js/modernizr.custom.28468.js"></script>
+<script src="/skins/js/filter.js"></script> <!-- Filter for support page -->
+<script src="/skins/js/cycle.js"></script> <!-- Cycle slider -->
+<script src="/skins/js/jquery.flexslider-min.js"></script> <!-- Flex slider -->
+
+<script src="/skins/js/easing.js"></script> <!-- Easing -->
+<script src="/skins/js/custom.js"></script>
+</body>
+</html>
